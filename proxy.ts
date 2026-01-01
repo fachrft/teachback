@@ -9,7 +9,10 @@ export async function proxy(request: NextRequest) {
   const authUser = await getAuthUser();
   const path = request.nextUrl.pathname;
   const isPublicPath =
-    path === "/" || path.startsWith("/login") || path.startsWith("/register") || path.startsWith("/auth");
+    path === "/" ||
+    path.startsWith("/login") ||
+    path.startsWith("/register") ||
+    path.startsWith("/auth");
 
   if (!authUser) {
     if (!isPublicPath) {
@@ -45,5 +48,7 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  matcher: [
+    "/((?!api|_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+  ],
 };

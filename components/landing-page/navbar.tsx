@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,10 +25,13 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <div className="relative size-8 rounded-lg overflow-hidden shrink-0">
-              <img
+              <Image
                 src="/logo.png"
                 alt="TeachBack Logo"
+                width={32}
+                height={32}
                 className="object-cover size-full"
+                unoptimized
               />
             </div>
             <span className="text-xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-emerald-600">
