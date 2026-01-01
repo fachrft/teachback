@@ -317,11 +317,8 @@ export default function KelasPage() {
           ))
         ) : classes.length > 0 ? (
           classes.map((kelas: any) => (
-            <Link href={`/guru/kelas/${kelas.id}`}>
-              <Card
-                key={kelas.id}
-                className="group hover:shadow-md transition-all cursor-pointer border-l-4 border-l-transparent hover:border-l-primary"
-              >
+            <Link href={`/guru/kelas/${kelas.id}`} key={kelas.id}>
+              <Card className="group hover:shadow-md transition-all cursor-pointer border-l-4 border-l-transparent hover:border-l-primary">
                 <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-2 pt-5">
                   <div className="flex items-center gap-3">
                     <div className="p-2 bg-primary/10 text-primary rounded-lg">
